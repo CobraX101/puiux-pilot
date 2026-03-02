@@ -105,7 +105,6 @@ async function autoTranslate(cwd: string, dryRun?: boolean): Promise<void> {
         if (!sourceFormat) {
           sourceFormat = tool as ToolFormat;
           sourcePath = full;
-        } else {
         }
       }
     }
@@ -131,9 +130,7 @@ async function autoTranslate(cwd: string, dryRun?: boolean): Promise<void> {
     const output = generateFromIR(ir, tool as ToolFormat);
     const targetPath = getTargetPath(cwd, tool as ToolFormat);
 
-    if (dryRun) {
-      // skip
-    } else {
+    if (!dryRun) {
       await ensureDir(join(cwd, ".github"));
       await atomicWrite(targetPath, output);
     }

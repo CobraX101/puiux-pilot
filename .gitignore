@@ -7,3 +7,4 @@ dist/
 tmp/
 *.tgz
 coverage/
+release-gates-report.md

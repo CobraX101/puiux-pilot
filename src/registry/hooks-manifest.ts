@@ -1,6 +1,6 @@
 /**
  * Hooks Manifest
- * Complete metadata for all 27 hooks with relevance conditions
+ * Complete metadata for all 28 hooks with relevance conditions
  */
 
 import type { HookMetadata } from "../shared/types.js";

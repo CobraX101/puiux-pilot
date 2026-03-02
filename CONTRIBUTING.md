@@ -50,7 +50,7 @@ A PR will be accepted only if:
 ## Security
 
 If you believe you found a security issue, do **not** open a public issue.
-Instead, contact maintainers privately.
+Instead, follow the process in [SECURITY.md](SECURITY.md).
 
 ## License of contributions
 

